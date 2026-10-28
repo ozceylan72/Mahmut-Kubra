@@ -76,13 +76,13 @@
         }
         .single-photo {
             width: 100%;
-            max-width: 220px;
-            height: 280px;
+            max-width: 200px;
+            height: 250px;
             object-fit: cover;
             border-radius: 18px;
             box-shadow: 0 8px 20px rgba(0,0,0,0.15);
             border: 4px solid #fff;
-            margin: 0 auto 15px auto;
+            margin: 0 auto 12px auto;
         }
         .music-box {
             background: #fff0f3;
@@ -100,21 +100,21 @@
         audio { width: 100%; outline: none; height: 35px; }
         .content-box {
             background: #fff0f3;
-            padding: 20px;
+            padding: 18px;
             border-radius: 18px;
             margin-bottom: 15px;
             border: 1px solid #ffccd5;
         }
         .content-box h3 {
             font-family: 'Great Vibes', cursive;
-            font-size: 2.2rem;
+            font-size: 2rem;
             color: #e91e63;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
         .content-box p {
-            font-size: 1.05rem;
+            font-size: 1rem;
             color: #555;
-            line-height: 1.6;
+            line-height: 1.5;
             font-style: italic;
         }
         .counter-layout {
@@ -191,13 +191,24 @@
     <!-- ANA 10 SAYFALIK ALBÜM -->
     <div id="mainContent" class="container hidden">
         
-        <!-- SAYFA 1 -->
+        <!-- SAYFA 1: TANIŞMA SAYACI VE MESAJI -->
         <div class="page" id="page1">
             <div>
-                <h1>Mahmut & Kübrâ 🌹</h1>
-                <img src="41B76DB1-134A-4958-9E85-849942D5C01C.png" alt="Foto 1" class="single-photo">
+                <h1>Aşk Hikayemiz Başlangıcı 🤍</h1>
+                <p class="subtitle">Sevda diye yazılmış biz diye görünmüş 🤍 🌹</p>
+                <div class="counter-layout">
+                    <div class="counter-content">
+                        <h3>Tanışma: 22 Ağustos 2026 🤍</h3>
+                        <div class="counter">
+                            <div class="time-box"><span id="days">0</span><label>Gün</label></div>
+                            <div class="time-box"><span id="hours">0</span><label>Saat</label></div>
+                            <div class="time-box"><span id="minutes">0</span><label>Dakika</label></div>
+                            <div class="time-box"><span id="seconds">0</span><label>Saniye</label></div>
+                        </div>
+                    </div>
+                </div>
                 <div class="content-box">
-                    <p>"Gözlerinde bulduğum huzur, ömrümün en güzel hediyesi..."</p>
+                    <p>"Hayatımın en güzel dönüm noktası, seninle yollarımızın kesiştiği o mucizevi gün oldu. İyi ki varsın meleğim..."</p>
                 </div>
             </div>
             <div>
@@ -209,13 +220,18 @@
             </div>
         </div>
 
-        <!-- SAYFA 2: ATKILI FOTOĞRAF VE DUYGUSAL/AĞLAMALI AN -->
+        <!-- SAYFA 2: BEN SANA MECBURUM ŞİİRİ -->
         <div class="page hidden" id="page2">
             <div>
-                <h1>Bazen Gözyaşı Bile Güzel... 🥺🤍</h1>
-                <img src="76B7FD26-05C5-41A3-8A67-8E49CC319186.jpeg" alt="Atkılı Fotoğrafımız" class="single-photo">
+                <h1>Şiir Gibisin 🌹</h1>
+                <p class="subtitle">Sevda diye yazılmış biz diye görünmüş 🤍 🌹</p>
+                <img src="IMG_1204.png" alt="Foto 2" class="single-photo">
                 <div class="content-box">
-                    <p>"Bunu görünce belki biraz duygulanıp ağlayabilirsin ama bil ki dökülen her gözyaşı, sana olan derin sevgimin ve mutluluğumun ispatı meleğim..."</p>
+                    <h3>Ben Sana Mecburum</h3>
+                    <p>Ben sana mecburum bilemezsin<br>
+                    Adını mıh gibi gökutoşumda tutuyorum<br>
+                    Büyüdükçe büyüyor kalabalığın<br>
+                    Ben sana mecburum bilemezsin...</p>
                 </div>
             </div>
             <div>
@@ -227,14 +243,17 @@
             </div>
         </div>
 
-        <!-- SAYFA 3 -->
+        <!-- SAYFA 3: BİRAZ GÜLELİM (FIKRA) -->
         <div class="page hidden" id="page3">
             <div>
-                <h1>İlk Hatıra 🌹</h1>
-                <img src="IMG_1204.png" alt="Foto 3" class="single-photo">
-                <div class="content-box">
-                    <h3>Ben Sana Mecburum</h3>
-                    <p>Ben sana mecburum bilemezsin<br>Adını mıh gibi gökutoşumda tutuyorum...</p>
+                <h1>Biraz Gülelim 😄</h1>
+                <p class="subtitle">Sevda diye yazılmış biz diye görünmüş 🤍 🌹</p>
+                <div class="content-box" style="font-size: 0.95rem; margin-top: 15px;">
+                    <p>Temel ile Dursun kahvede otururken Temel sormuş:<br><br>
+                    - Ula Dursun, aşk ile evlilik arasındaki fark nedir?<br><br>
+                    Dursun gülerek cevap vermiş:<br>
+                    - Valla aşk gözünü kör eder, evlilik ise gözlük taktırır!<br><br>
+                    Gülüşüne kurban olduğum, yüzünden gülücükler hiç eksik olmasın meleğim! 🤍</p>
                 </div>
             </div>
             <div>
@@ -246,14 +265,17 @@
             </div>
         </div>
 
-        <!-- SAYFA 4 -->
+        <!-- SAYFA 4: ATKILI FOTOĞRAF VE LİNET SÖZLERİ -->
         <div class="page hidden" id="page4">
             <div>
-                <h1>Müzik ve Biz 🎵</h1>
-                <img src="41B76DB1-134A-4958-9E85-849942D5C01C.png" alt="Foto 4" class="single-photo">
-                <div class="music-box">
-                    <p>🎵 Buray - Deli Kız Çalıyor...</p>
-                    <button onclick="document.getElementById('loveSong').play()" style="background:#e91e63; color:#fff; border:none; padding:5px 15px; border-radius:8px; cursor:pointer; font-size:0.9rem;">Müziği Başlat / Aç</button>
+                <h1>Yiğidim 🥺🤍</h1>
+                <p class="subtitle">Sevda diye yazılmış biz diye görünmüş 🤍 🌹</p>
+                <img src="76B7FD26-05C5-41A3-8A67-8E49CC319186.jpeg" alt="Atkılı Fotoğrafımız" class="single-photo">
+                <div class="content-box">
+                    <p>Kim alır seni benden kim koparır?<br>
+                    Göze alan varsa da ölümü çiğner de alır!<br><br>
+                    Göz koyanlar bize düşsün dermansız derde,<br>
+                    Üstüne titrediğim, göz nurum, yiğidim...</p>
                 </div>
             </div>
             <div>
@@ -265,16 +287,15 @@
             </div>
         </div>
 
-        <!-- SAYFA 5: GÜLÜMSEME VE FIKRA SAYFASI -->
+        <!-- SAYFA 5: MÜZİK VE DUYGUSAL SÖZ -->
         <div class="page hidden" id="page5">
             <div>
-                <h1>Şimdi Bu Sayfada Güleceksin! 😄</h1>
-                <img src="76B7FD26-05C5-41A3-8A67-8E49CC319186.jpeg" alt="Foto 5" class="single-photo">
-                <div class="content-box" style="font-size: 0.95rem;">
-                    <p>Temel ile Dursun kahvede otururken Temel sormuş:<br>
-                    - Ula Dursun, aşk ile evlilik arasındaki fark nedir?<br>
-                    Dursun gülerek cevap vermiş:<br>
-                    - Valla aşk gözünü kör eder, evlilik ise gözlük taktırır! Gülümse haydi, gülüşüne kurban olduğum! 🤍</p>
+                <h1>Müzik ve Biz 🎵</h1>
+                <p class="subtitle">Sevda diye yazılmış biz diye görünmüş 🤍 🌹</p>
+                <img src="41B76DB1-134A-4958-9E85-849942D5C01C.png" alt="Foto 5" class="single-photo">
+                <div class="music-box">
+                    <p>🎵 Buray - Deli Kız Çalıyor...</p>
+                    <button onclick="document.getElementById('loveSong').play()" style="background:#e91e63; color:#fff; border:none; padding:5px 15px; border-radius:8px; cursor:pointer; font-size:0.9rem;">Müziği Başlat / Aç</button>
                 </div>
             </div>
             <div>
@@ -289,10 +310,11 @@
         <!-- SAYFA 6 -->
         <div class="page hidden" id="page6">
             <div>
-                <h1>Özel Anlar 🤍</h1>
+                <h1>Kalbimin Sahibi ✨</h1>
+                <p class="subtitle">Sevda diye yazılmış biz diye görünmüş 🤍 🌹</p>
                 <img src="IMG_1204.png" alt="Foto 6" class="single-photo">
                 <div class="content-box">
-                    <p>"Ellerimiz sonsuza kadar birbirine mühürlü kalacak..."</p>
+                    <p>"Gözlerinde bulduğum huzur, hayatımın en güzel melodisi, iyi ki varsın Kübrâ-yı Gülüm..."</p>
                 </div>
             </div>
             <div>
@@ -307,10 +329,11 @@
         <!-- SAYFA 7 -->
         <div class="page hidden" id="page7">
             <div>
-                <h1>Ruh Eşim 🌹</h1>
-                <img src="41B76DB1-134A-4958-9E85-849942D5C01C.png" alt="Foto 7" class="single-photo">
+                <h1>Özel Anlar 🤍</h1>
+                <p class="subtitle">Sevda diye yazılmış biz diye görünmüş 🤍 🌹</p>
+                <img src="76B7FD26-05C5-41A3-8A67-8E49CC319186.jpeg" alt="Foto 7" class="single-photo">
                 <div class="content-box">
-                    <p>"Büyüdükçe büyüyor kalabalığın, ben sana mecburum..."</p>
+                    <p>"Ellerimiz sonsuza kadar birbirine mühürlü kalacak, kalbim her an seninle atıyor..."</p>
                 </div>
             </div>
             <div>
@@ -325,19 +348,12 @@
         <!-- SAYFA 8 -->
         <div class="page hidden" id="page8">
             <div>
-                <h1>Tanışma Zamanımız 🤍</h1>
-                <div class="counter-layout" style="margin-top:10px;">
-                    <div class="counter-content">
-                        <h3>Tanışma: 22 Ağustos 2026 🤍</h3>
-                        <div class="counter">
-                            <div class="time-box"><span id="days">0</span><label>Gün</label></div>
-                            <div class="time-box"><span id="hours">0</span><label>Saat</label></div>
-                            <div class="time-box"><span id="minutes">0</span><label>Dakika</label></div>
-                            <div class="time-box"><span id="seconds">0</span><label>Saniye</label></div>
-                        </div>
-                    </div>
+                <h1>Ruh Eşim 🌹</h1>
+                <p class="subtitle">Sevda diye yazılmış biz diye görünmüş 🤍 🌹</p>
+                <img src="41B76DB1-134A-4958-9E85-849942D5C01C.png" alt="Foto 8" class="single-photo">
+                <div class="content-box">
+                    <p>"Sevda diye yazılmış biz diye görünmüş, adın ömrümün başköşesine kazınmış..."</p>
                 </div>
-                <img src="IMG_1204.png" alt="Foto 8" class="single-photo" style="max-width:140px; height:160px;">
             </div>
             <div>
                 <div class="navigation-buttons">
@@ -352,9 +368,10 @@
         <div class="page hidden" id="page9">
             <div>
                 <h1>Sonsuzluk Yolunda 🌹</h1>
-                <img src="76B7FD26-05C5-41A3-8A67-8E49CC319186.jpeg" alt="Foto 9" class="single-photo">
+                <p class="subtitle">Sevda diye yazılmış biz diye görünmüş 🤍 🌹</p>
+                <img src="IMG_1204.png" alt="Foto 9" class="single-photo">
                 <div class="content-box">
-                    <p>"Gülüşün ömrüme ömür katıyor, iyi ki benimlesin Kübrâ-yı Gülüm."</p>
+                    <p>"Gülüşün ömrüme ömür katıyor, iyi ki benimlesin meleğim."</p>
                 </div>
             </div>
             <div>
@@ -366,10 +383,11 @@
             </div>
         </div>
 
-        <!-- SAYFA 10 -->
+        <!-- SAYFA 10: KAPANIŞ -->
         <div class="page hidden" id="page10">
             <div>
                 <h1>En Güzel Günce 🤍</h1>
+                <p class="subtitle">Sevda diye yazılmış biz diye görünmüş 🤍 🌹</p>
                 <img src="41B76DB1-134A-4958-9E85-849942D5C01C.png" alt="Foto 10" class="single-photo">
                 <div class="content-box" style="background:#fff;">
                     <p style="font-family: 'Great Vibes', cursive; font-size: 2rem; color: #e91e63;">Senin günlüğünde her gün olmak isterim 🤍🌹</p>

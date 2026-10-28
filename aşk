@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mahmut & Kübra | Aşk Hikayemiz 🤍</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Great+Vibes&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
+            font-family: 'Poppins', sans-serif;
+            color: #4a4a4a;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+        .container {
+            max-width: 600px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            margin-top: 20px;
+            backdrop-filter: blur(5px);
+        }
+        h1 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 3.5rem;
+            color: #e91e63;
+            margin-bottom: 10px;
+        }
+        p.subtitle {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 25px;
+        }
+        .music-box {
+            background: #fff0f3;
+            padding: 15px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            border: 1px solid #ffccd5;
+        }
+        .music-box p {
+            font-size: 0.95rem;
+            color: #d81b60;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        audio {
+            width: 100%;
+            outline: none;
+        }
+        .counter {
+            display: flex;
+            justify-content: space-around;
+            background: #fff;
+            padding: 15px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-bottom: 25px;
+        }
+        .time-box span {
+            display: block;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #e91e63;
+        }
+        .time-box label {
+            font-size: 0.8rem;
+            color: #888;
+        }
+        .note {
+            font-style: italic;
+            color: #555;
+            line-height: 1.6;
+        }
+        .heart {
+            position: absolute;
+            color: #e91e63;
+            font-size: 20px;
+            animation: flyUp 1.5s linear forwards;
+            pointer-events: none;
+        }
+        @keyframes flyUp {
+            0% { transform: translateY(0) scale(1); opacity: 1; }
+            100% { transform: translateY(-100px) scale(1.5); opacity: 0; }
+        }
+    </style>
+</head>
+<body onclick="createHeart(event)">
+
+    <div class="container">
+        <h1>Mahmut & Kübra</h1>
+        <p class="subtitle">Sonsuza Dek Sürecek Aşk Hikayemiz 🤍</p>
+
+        <!-- Buray - Deli Kız Müzik Alanı -->
+        <div class="music-box">
+            <p>🎵 Buray - Deli Kız</p>
+            <audio controls loop autoplay>
+                <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+                Tarayıcınız ses ögesini desteklemiyor.
+            </audio>
+            <p style="font-size: 0.75rem; color: #888; margin-top: 5px;">(Kendi MP3 dosyanızın linkini buraya ekleyebilirsiniz)</p>
+        </div>
+
+        <!-- Aşk Sayacı -->
+        <div class="counter">
+            <div class="time-box">
+                <span id="days">0</span>
+                <label>Gün</label>
+            </div>
+            <div class="time-box">
+                <span id="hours">0</span>
+                <label>Saat</label>
+            </div>
+            <div class="time-box">
+                <span id="minutes">0</span>
+                <label>Dakika</label>
+            </div>
+            <div class="time-box">
+                <span id="seconds">0</span>
+                <label>Saniye</label>
+            </div>
+        </div>
+
+        <p class="note">"Gözlerinde bulduğum huzur, hayatımın en güzel melodisi..."</p>
+    </div>
+
+    <script>
+        // İlişkinizin Başlangıç Tarihi (Yıl, Ay-1, Gün)
+        const startDate = new Date(2023, 0, 1); 
+
+        function updateCounter() {
+            const now = new Date();
+            const diff = now - startDate;
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+            const minutes = Math.floor((diff / 1000 / 60) % 60);
+            const seconds = Math.floor((diff / 1000) % 60);
+
+            document.getElementById('days').innerText = days;
+            document.getElementById('hours').innerText = hours;
+            document.getElementById('minutes').innerText = minutes;
+            document.getElementById('seconds').innerText = seconds;
+        }
+        setInterval(updateCounter, 1000);
+        updateCounter();
+
+        function createHeart(e) {
+            const heart = document.createElement('div');
+            heart.className = 'heart';
+            heart.innerHTML = '❤️';
+            heart.style.left = e.pageX + 'px';
+            heart.style.top = e.pageY + 'px';
+            document.body.appendChild(heart);
+            setTimeout(() => heart.remove(), 1500);
+        }
+    </script>
+</body>
+</html>

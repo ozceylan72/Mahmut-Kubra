@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mahmut & Kübrâ-yı Gülüm 🌹 | Aşk Hikayemiz 🤍</title>
+    <title>Mahmut & Kübrâ-yı Gülüm 🌹 | Aşk Albümümüz 🤍</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Great+Vibes&display=swap" rel="stylesheet">
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -16,31 +16,35 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 30px 15px;
+            padding: 20px 15px;
             overflow-x: hidden;
         }
         .container, .lock-screen {
-            max-width: 800px;
+            max-width: 750px;
             width: 100%;
             background: rgba(255, 255, 255, 0.96);
-            padding: 40px;
+            padding: 35px;
             border-radius: 25px;
             box-shadow: 0 15px 35px rgba(0,0,0,0.15);
             text-align: center;
             backdrop-filter: blur(8px);
             margin-bottom: 20px;
+            min-height: 520px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
         .hidden { display: none !important; }
         h1 {
             font-family: 'Great Vibes', cursive;
-            font-size: 4rem;
+            font-size: 3.5rem;
             color: #e91e63;
-            margin-bottom: 10px;
+            margin-bottom: 5px;
         }
         p.subtitle {
-            font-size: 1.25rem;
+            font-size: 1.15rem;
             color: #666;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
             font-style: italic;
         }
         .lock-screen input {
@@ -53,9 +57,9 @@
             margin-right: 10px;
             text-align: center;
         }
-        .lock-screen button {
-            padding: 15px 25px;
-            font-size: 1.1rem;
+        .lock-screen button, .nav-btn {
+            padding: 12px 25px;
+            font-size: 1rem;
             background-color: #e91e63;
             color: white;
             border: none;
@@ -64,7 +68,7 @@
             font-weight: 600;
             transition: 0.3s;
         }
-        .lock-screen button:hover { background-color: #d81b60; }
+        .lock-screen button:hover, .nav-btn:hover { background-color: #d81b60; }
         .error-msg {
             color: #d32f2f;
             margin-top: 15px;
@@ -73,261 +77,4 @@
         .photo-gallery {
             display: flex;
             gap: 15px;
-            justify-content: center;
-            margin-bottom: 30px;
-            flex-wrap: wrap;
-        }
-        .photo-gallery img {
-            width: 100%;
-            max-width: 175px;
-            height: 240px;
-            object-fit: cover;
-            border-radius: 16px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-            border: 4px solid #fff;
-            transition: transform 0.3s;
-        }
-        .photo-gallery img:hover { transform: scale(1.03); }
-        .music-box {
-            background: #fff0f3;
-            padding: 20px;
-            border-radius: 18px;
-            margin-bottom: 30px;
-            border: 1px solid #ffccd5;
-        }
-        .music-box p {
-            font-size: 1.05rem;
-            color: #d81b60;
-            margin-bottom: 12px;
-            font-weight: 600;
-        }
-        audio { width: 100%; outline: none; }
-        .poetry-box {
-            background: #fff;
-            padding: 25px;
-            border-radius: 18px;
-            margin-bottom: 30px;
-            border: 1px solid #ffccd5;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        }
-        .poetry-box h3 {
-            font-family: 'Great Vibes', cursive;
-            font-size: 2.3rem;
-            color: #e91e63;
-            margin-bottom: 12px;
-        }
-        .poetry-box p {
-            font-size: 1.05rem;
-            color: #555;
-            line-height: 1.9;
-            font-style: italic;
-            white-space: pre-line;
-        }
-        .counter-layout {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            background: #fff;
-            padding: 25px;
-            border-radius: 18px;
-            border: 1px solid #ffccd5;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            margin-bottom: 30px;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-        .counter-content {
-            flex: 1;
-            min-width: 280px;
-        }
-        .counter-content h3 {
-            font-size: 1.15rem;
-            color: #e91e63;
-            margin-bottom: 15px;
-            font-weight: 600;
-        }
-        .counter {
-            display: flex;
-            justify-content: space-around;
-        }
-        .time-box span {
-            display: block;
-            font-size: 1.7rem;
-            font-weight: 600;
-            color: #e91e63;
-        }
-        .time-box label { font-size: 0.8rem; color: #888; }
-        .counter-photo {
-            width: 130px;
-            height: 130px;
-            object-fit: cover;
-            border-radius: 50%;
-            border: 4px solid #ffccd5;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        .long-story-box {
-            background: #fff0f3;
-            padding: 25px;
-            border-radius: 18px;
-            margin-bottom: 30px;
-            border: 1px solid #ffccd5;
-            text-align: left;
-        }
-        .long-story-box h4 {
-            font-family: 'Great Vibes', cursive;
-            font-size: 2rem;
-            color: #e91e63;
-            margin-bottom: 10px;
-            text-align: center;
-        }
-        .long-story-box p {
-            font-size: 1.05rem;
-            color: #555;
-            line-height: 1.8;
-            margin-bottom: 12px;
-            text-align: center;
-        }
-        .note { font-style: italic; color: #555; line-height: 1.7; font-size: 1.15rem; margin-top: 15px; }
-        .heart {
-            position: absolute;
-            color: #e91e63;
-            font-size: 22px;
-            animation: flyUp 1.5s linear forwards;
-            pointer-events: none;
-        }
-        @keyframes flyUp {
-            0% { transform: translateY(0) scale(1); opacity: 1; }
-            100% { transform: translateY(-120px) scale(1.6); opacity: 0; }
-        }
-    </style>
-</head>
-<body onclick="createHeart(event)">
-
-    <!-- ŞİFRE EKRANI -->
-    <div id="lockScreen" class="lock-screen">
-        <h1>Kübrâ-yı Gülüm 🌹 🤍</h1>
-        <p class="subtitle">Sevda diye yazılmış biz diye görünmüş 🤍 🌹</p>
-        <input type="password" id="passcode" placeholder="Şifre nedir?">
-        <button onclick="checkPassword()">Giriş Yap</button>
-        <p id="errorMsg" class="error-msg"></p>
-    </div>
-
-    <!-- ANA AŞK SAYFASI -->
-    <div id="mainContent" class="container hidden">
-        <h1>Mahmut & Kübrâ-yı Gülüm 🌹 🤍</h1>
-        <p class="subtitle">Sevda diye yazılmış biz diye görünmüş 🤍 🌹</p>
-
-        <!-- FOTOĞRAFLARINIZ (4'LÜ GALERİ) -->
-        <div class="photo-gallery">
-            <img src="41B76DB1-134A-4958-9E85-849942D5C01C.png" alt="Mahmut & Kübra Kız Kulesi">
-            <img src="76B7FD26-05C5-41A3-8A67-8E49CC319186.jpeg" alt="Mahmut & Kübra Sokak">
-            <img src="IMG_1204.png" alt="İlk Tanışma Hatırası">
-            <img src="41B76DB1-134A-4958-9E85-849942D5C01C.png" alt="Özel Anımız">
-        </div>
-
-        <!-- Buray - Deli Kız Müzik Alanı -->
-        <div class="music-box">
-            <p>🎵 Buray - Deli Kız</p>
-            <audio id="loveSong" controls loop>
-                <source src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf7f6.mp3?filename=romantic-guitars-112134.mp3" type="audio/mpeg">
-                Tarayıcınız ses ögesini desteklemiyor.
-            </audio>
-        </div>
-
-        <!-- UZUN DUYGUSAL METİN ALANI -->
-        <div class="long-story-box">
-            <h4>Kalbimin Sahibi...</h4>
-            <p>Hayatıma girdiğin günden beri her anım ayrı bir güzel, her detay seninle anlam kazandı. Gözlerinde bulduğum huzur, sesinde duyduğum şefkat ömrümün en değerli hediyesi.</p>
-            <p>İyi ki yollarımız kesişti, iyi ki sevdan kalbime yazıldı. Ellerimiz sonsuza kadar birbirine mühürlü kalacak meleğim.</p>
-        </div>
-
-        <!-- ŞİİR ALANI -->
-        <div class="poetry-box">
-            <h3>Ben Sana Mecburum</h3>
-            <p>Ben sana mecburum bilemezsin
-            Adını mıh gibi gökutoşumda tutuyorum
-            Büyüdükçe büyüyor kalabalığın
-            Ben sana mecburum bilemezsin
-            İçeri giriyorum uzaklardasın
-            Dışarı çıkıyorum kuralsız...</p>
-        </div>
-
-        <!-- TANIŞMA TARIHI VE YANINDA FOTOĞRAF -->
-        <div class="counter-layout">
-            <div class="counter-content">
-                <h3>Birlikte Geçen Her Anımız Değerli 🤍 <br>(Tanışma: 22 Ağustos 2026)</h3>
-                <div class="counter">
-                    <div class="time-box">
-                        <span id="days">0</span>
-                        <label>Gün</label>
-                    </div>
-                    <div class="time-box">
-                        <span id="hours">0</span>
-                        <label>Saat</label>
-                    </div>
-                    <div class="time-box">
-                        <span id="minutes">0</span>
-                        <label>Dakika</label>
-                    </div>
-                    <div class="time-box">
-                        <span id="seconds">0</span>
-                        <label>Saniye</label>
-                    </div>
-                </div>
-            </div>
-            <img src="IMG_1204.png" alt="Tanışma Hatırası" class="counter-photo">
-        </div>
-
-        <p class="note">"Gözlerinde bulduğum huzur, hayatımın en güzel melodisi, iyi ki varsın Kübrâ-yı Gülüm..."</p>
-    </div>
-
-    <script>
-        const correctPassword = "582700"; 
-
-        function checkPassword() {
-            const inputVal = document.getElementById('passcode').value;
-            const errorMsg = document.getElementById('errorMsg');
-
-            if (inputVal === correctPassword) {
-                document.getElementById('lockScreen').classList.add('hidden');
-                document.getElementById('mainContent').classList.remove('hidden');
-                document.getElementById('loveSong').play().catch(e => console.log(e));
-            } else {
-                errorMsg.innerText = "Şifre yanlış Kübrâ-yı Gülüm, tekrar dene! ❤️";
-            }
-        }
-
-        // Tanışma Tarihi: 22 Ağustos 2026 (Aylar 0'dan başlar: Ağustos = 7)
-        const startDate = new Date(2026, 7, 22); 
-
-        function updateCounter() {
-            const now = new Date();
-            const diff = now - startDate;
-
-            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-            const minutes = Math.floor((diff / 1000 / 60) % 60);
-            const seconds = Math.floor((diff / 1000) % 60);
-
-            document.getElementById('days').innerText = days >= 0 ? days : 0;
-            document.getElementById('hours').innerText = hours >= 0 ? hours : 0;
-            document.getElementById('minutes').innerText = minutes >= 0 ? minutes : 0;
-            document.getElementById('seconds').innerText = seconds >= 0 ? seconds : 0;
-        }
-        setInterval(updateCounter, 1000);
-        updateCounter();
-
-        function createHeart(e) {
-            if(document.getElementById('mainContent').classList.contains('hidden')) return;
-            
-            const heart = document.createElement('div');
-            heart.className = 'heart';
-            heart.innerHTML = '❤️';
-            heart.style.left = e.pageX + 'px';
-            heart.style.top = e.pageY + 'px';
-            document.body.appendChild(heart);
-            setTimeout(() => heart.remove(), 1500);
-        }
-    </script>
-</body>
-</html>
+            justify-content: center

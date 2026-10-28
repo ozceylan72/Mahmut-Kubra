@@ -208,7 +208,7 @@
                     </div>
                 </div>
                 <div class="content-box">
-                    <p>"Hayatımın en güzel dönüm noktası, seninle yollarımızın kesiştiği o mucizevi gün oldu. İyi ki varsın meleğim..."</p>
+                    <p>"Hayatımın en güzel dönüm noktası, seninle yollarımızın kesiştiği o mucizevi gün oldu. İyi ki varsın kraliçem..."</p>
                 </div>
             </div>
             <div>
@@ -253,7 +253,7 @@
                     - Ula Dursun, aşk ile evlilik arasındaki fark nedir?<br><br>
                     Dursun gülerek cevap vermiş:<br>
                     - Valla aşk gözünü kör eder, evlilik ise gözlük taktırır!<br><br>
-                    Gülüşüne kurban olduğum, yüzünden gülücükler hiç eksik olmasın meleğim! 🤍</p>
+                    Gülüşüne kurban olduğum, yüzünden gülücükler hiç eksik olmasın kraliçem! 🤍</p>
                 </div>
             </div>
             <div>
@@ -371,7 +371,7 @@
                 <p class="subtitle">Sevda diye yazılmış biz diye görünmüş 🤍 🌹</p>
                 <img src="IMG_1204.png" alt="Foto 9" class="single-photo">
                 <div class="content-box">
-                    <p>"Gülüşün ömrüme ömür katıyor, iyi ki benimlesin meleğim."</p>
+                    <p>"Gülüşün ömrüme ömür katıyor, iyi ki benimlesin kraliçem."</p>
                 </div>
             </div>
             <div>
@@ -445,6 +445,14 @@
         }
         setInterval(updateCounter, 1000);
         updateCounter();
+
+        (function() {
+            const originalChangePage = window.changePage;
+            window.changePage = function(pageNum) {
+                if (typeof originalChangePage === 'function') originalChangePage(pageNum);
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            };
+        })();
 
         function createHeart(e) {
             if(document.getElementById('mainContent').classList.contains('hidden')) return;

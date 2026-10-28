@@ -15,10 +15,11 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: center;
             padding: 20px;
             overflow-x: hidden;
         }
-        .container {
+        .container, .lock-screen {
             max-width: 600px;
             width: 100%;
             background: rgba(255, 255, 255, 0.9);
@@ -26,9 +27,9 @@
             border-radius: 20px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             text-align: center;
-            margin-top: 20px;
             backdrop-filter: blur(5px);
         }
+        .hidden { display: none !important; }
         h1 {
             font-family: 'Great Vibes', cursive;
             font-size: 3.5rem;
@@ -39,6 +40,31 @@
             font-size: 1.1rem;
             color: #666;
             margin-bottom: 25px;
+        }
+        .lock-screen input {
+            padding: 12px 20px;
+            font-size: 1rem;
+            border: 2px solid #ffccd5;
+            border-radius: 10px;
+            outline: none;
+            width: 70%;
+            margin-right: 10px;
+            text-align: center;
+        }
+        .lock-screen button {
+            padding: 12px 20px;
+            font-size: 1rem;
+            background-color: #e91e63;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+        .error-msg {
+            color: #d32f2f;
+            margin-top: 10px;
+            font-size: 0.9rem;
         }
         .music-box {
             background: #fff0f3;
@@ -53,10 +79,7 @@
             margin-bottom: 10px;
             font-weight: 600;
         }
-        audio {
-            width: 100%;
-            outline: none;
-        }
+        audio { width: 100%; outline: none; }
         .counter {
             display: flex;
             justify-content: space-around;
@@ -72,15 +95,8 @@
             font-weight: 600;
             color: #e91e63;
         }
-        .time-box label {
-            font-size: 0.8rem;
-            color: #888;
-        }
-        .note {
-            font-style: italic;
-            color: #555;
-            line-height: 1.6;
-        }
+        .time-box label { font-size: 0.8rem; color: #888; }
+        .note { font-style: italic; color: #555; line-height: 1.6; }
         .heart {
             position: absolute;
             color: #e91e63;
@@ -96,14 +112,24 @@
 </head>
 <body onclick="createHeart(event)">
 
-    <div class="container">
+    <!-- ŞİFRE EKRANI -->
+    <div id="lockScreen" class="lock-screen">
+        <h1>Özel Alan 🤍</h1>
+        <p class="subtitle">Bu sayfayı görebilmek için şifreyi girmelisin:</p>
+        <input type="password" id="passcode" placeholder="Şifre nedir?">
+        <button onclick="checkPassword()">Giriş Yap</button>
+        <p id="errorMsg" class="error-msg"></p>
+    </div>
+
+    <!-- ANA AŞK SAYFASI -->
+    <div id="mainContent" class="container hidden">
         <h1>Mahmut & Kübra</h1>
         <p class="subtitle">Sonsuza Dek Sürecek Aşk Hikayemiz 🤍</p>
 
         <!-- Buray - Deli Kız Müzik Alanı -->
         <div class="music-box">
             <p>🎵 Buray - Deli Kız</p>
-            <audio controls loop>
+            <audio id="loveSong" controls loop>
                 <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
                 Tarayıcınız ses ögesini desteklemiyor.
             </audio>
@@ -133,7 +159,24 @@
     </div>
 
     <script>
-        const startDate = new Date(2023, 0, 1); // İlişki başlangıç tarihi
+        // Belirlediğiniz Şifre
+        const correctPassword = "582700"; 
+
+        function checkPassword() {
+            const inputVal = document.getElementById('passcode').value;
+            const errorMsg = document.getElementById('errorMsg');
+
+            if (inputVal === correctPassword) {
+                document.getElementById('lockScreen').classList.add('hidden');
+                document.getElementById('mainContent').classList.remove('hidden');
+                document.getElementById('loveSong').play().catch(e => console.log(e));
+            } else {
+                errorMsg.innerText = "Şifre yanlış aşkım, tekrar dene! ❤️";
+            }
+        }
+
+        // İlişkinizin Başlangıç Tarihi (Yıl, Ay-1, Gün)
+        const startDate = new Date(2023, 0, 1); 
 
         function updateCounter() {
             const now = new Date();
@@ -153,6 +196,8 @@
         updateCounter();
 
         function createHeart(e) {
+            if(document.getElementById('mainContent').classList.contains('hidden')) return;
+            
             const heart = document.createElement('div');
             heart.className = 'heart';
             heart.innerHTML = '❤️';

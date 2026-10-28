@@ -23,7 +23,7 @@
             max-width: 750px;
             width: 100%;
             background: rgba(255, 255, 255, 0.96);
-            padding: 35px;
+            padding: 30px;
             border-radius: 25px;
             box-shadow: 0 15px 35px rgba(0,0,0,0.15);
             text-align: center;
@@ -37,14 +37,14 @@
         .hidden { display: none !important; }
         h1 {
             font-family: 'Great Vibes', cursive;
-            font-size: 3.5rem;
+            font-size: 3.2rem;
             color: #e91e63;
             margin-bottom: 5px;
         }
         p.subtitle {
-            font-size: 1.15rem;
+            font-size: 1.1rem;
             color: #666;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             font-style: italic;
         }
         .lock-screen input {
@@ -58,7 +58,7 @@
             text-align: center;
         }
         .lock-screen button, .nav-btn {
-            padding: 12px 25px;
+            padding: 12px 22px;
             font-size: 1rem;
             background-color: #e91e63;
             color: white;
@@ -74,55 +74,48 @@
             margin-top: 15px;
             font-size: 0.95rem;
         }
-        .photo-gallery {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            margin-bottom: 20px;
-            flex-wrap: wrap;
-        }
-        .photo-gallery img {
+        .single-photo {
             width: 100%;
-            max-width: 150px;
-            height: 210px;
+            max-width: 220px;
+            height: 280px;
             object-fit: cover;
-            border-radius: 15px;
+            border-radius: 18px;
             box-shadow: 0 8px 20px rgba(0,0,0,0.15);
             border: 4px solid #fff;
+            margin: 0 auto 15px auto;
         }
         .music-box {
             background: #fff0f3;
-            padding: 15px;
-            border-radius: 15px;
-            margin-bottom: 20px;
-            border: 1px solid #ffccd5;
-        }
-        .music-box p {
-            font-size: 1rem;
-            color: #d81b60;
-            margin-bottom: 8px;
-            font-weight: 600;
-        }
-        audio { width: 100%; outline: none; }
-        .poetry-box {
-            background: #fff;
-            padding: 15px;
+            padding: 12px;
             border-radius: 15px;
             margin-bottom: 15px;
             border: 1px solid #ffccd5;
         }
-        .poetry-box h3 {
+        .music-box p {
+            font-size: 0.95rem;
+            color: #d81b60;
+            margin-bottom: 6px;
+            font-weight: 600;
+        }
+        audio { width: 100%; outline: none; height: 35px; }
+        .content-box {
+            background: #fff0f3;
+            padding: 20px;
+            border-radius: 18px;
+            margin-bottom: 15px;
+            border: 1px solid #ffccd5;
+        }
+        .content-box h3 {
             font-family: 'Great Vibes', cursive;
-            font-size: 2rem;
+            font-size: 2.2rem;
             color: #e91e63;
             margin-bottom: 8px;
         }
-        .poetry-box p {
-            font-size: 0.95rem;
+        .content-box p {
+            font-size: 1.05rem;
             color: #555;
             line-height: 1.6;
             font-style: italic;
-            white-space: pre-line;
         }
         .counter-layout {
             display: flex;
@@ -137,9 +130,9 @@
             margin-bottom: 15px;
         }
         .counter-content h3 {
-            font-size: 1.05rem;
+            font-size: 1rem;
             color: #e91e63;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             font-weight: 600;
         }
         .counter {
@@ -149,54 +142,20 @@
         }
         .time-box span {
             display: block;
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             font-weight: 600;
             color: #e91e63;
         }
-        .time-box label { font-size: 0.75rem; color: #888; }
-        .counter-photo {
-            width: 100px;
-            height: 100px;
-            object-fit: cover;
-            border-radius: 50%;
-            border: 4px solid #ffccd5;
-        }
-        .long-story-box {
-            background: #fff0f3;
-            padding: 20px;
-            border-radius: 15px;
-            margin-bottom: 20px;
-            border: 1px solid #ffccd5;
-            text-align: center;
-        }
-        .long-story-box h4 {
-            font-family: 'Great Vibes', cursive;
-            font-size: 2rem;
-            color: #e91e63;
-            margin-bottom: 8px;
-        }
-        .long-story-box p {
-            font-size: 1rem;
-            color: #555;
-            line-height: 1.7;
-            margin-bottom: 8px;
-        }
-        .final-note {
-            font-family: 'Great Vibes', cursive;
-            font-size: 1.8rem;
-            color: #e91e63;
-            margin-top: 10px;
-            font-style: italic;
-        }
+        .time-box label { font-size: 0.7rem; color: #888; }
         .navigation-buttons {
             display: flex;
             justify-content: space-between;
-            margin-top: 15px;
+            margin-top: 10px;
         }
         .page-indicator {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: #888;
-            margin-top: 10px;
+            margin-top: 5px;
         }
         .heart {
             position: absolute;
@@ -224,62 +183,150 @@
         <p id="errorMsg" class="error-msg"></p>
     </div>
 
-    <!-- ANA ALBÜM SAYFALARI -->
+    <!-- MÜZİK ÇALAR -->
+    <audio id="loveSong" loop>
+        <source src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf7f6.mp3?filename=romantic-guitars-112134.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- ANA 10 SAYFALIK ALBÜM -->
     <div id="mainContent" class="container hidden">
         
-        <!-- SAYFA 1: Giriş ve Fotoğraflar -->
+        <!-- SAYFA 1 -->
         <div class="page" id="page1">
             <div>
-                <h1>Mahmut & Kübrâ-yı Gülüm 🌹 🤍</h1>
-                <p class="subtitle">Sevda diye yazılmış biz diye görünmüş 🤍 🌹</p>
-                <div class="photo-gallery">
-                    <img src="41B76DB1-134A-4958-9E85-849942D5C01C.png" alt="Anı 1">
-                    <img src="76B7FD26-05C5-41A3-8A67-8E49CC319186.jpeg" alt="Anı 2">
-                    <img src="IMG_1204.png" alt="Anı 3">
+                <h1>Mahmut & Kübrâ 🌹</h1>
+                <img src="41B76DB1-134A-4958-9E85-849942D5C01C.png" alt="Foto 1" class="single-photo">
+                <div class="content-box">
+                    <p>"Gözlerinde bulduğum huzur, ömrümün en güzel hediyesi..."</p>
                 </div>
             </div>
             <div>
                 <div class="navigation-buttons">
                     <span></span>
-                    <button class="nav-btn" onclick="changePage(2)">Sonraki Sayfa ❯</button>
+                    <button class="nav-btn" onclick="changePage(2)">Sonraki ❯</button>
                 </div>
-                <div class="page-indicator">Sayfa 1 / 3</div>
+                <div class="page-indicator">Sayfa 1 / 10</div>
             </div>
         </div>
 
-        <!-- SAYFA 2: Müzik ve Duygusal Yazı -->
+        <!-- SAYFA 2: ATKILI FOTOĞRAF VE DUYGUSAL/AĞLAMALI AN -->
         <div class="page hidden" id="page2">
             <div>
-                <h1>Kalpten Sayfalar 🤍</h1>
-                <div class="music-box">
-                    <p>🎵 Buray - Deli Kız</p>
-                    <audio id="loveSong" controls loop>
-                        <source src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf7f6.mp3?filename=romantic-guitars-112134.mp3" type="audio/mpeg">
-                    </audio>
-                </div>
-                <div class="long-story-box">
-                    <h4>Kalbimin Sahibi...</h4>
-                    <p>Hayatıma girdiğin günden beri her anım ayrı bir güzel, her detay seninle anlam kazandı. Gözlerinde bulduğum huzur, sesimde duyduğum şefkat ömrümün en değerli hediyesi.</p>
+                <h1>Bazen Gözyaşı Bile Güzel... 🥺🤍</h1>
+                <img src="76B7FD26-05C5-41A3-8A67-8E49CC319186.jpeg" alt="Atkılı Fotoğrafımız" class="single-photo">
+                <div class="content-box">
+                    <p>"Bunu görünce belki biraz duygulanıp ağlayabilirsin ama bil ki dökülen her gözyaşı, sana olan derin sevgimin ve mutluluğumun ispatı meleğim..."</p>
                 </div>
             </div>
             <div>
                 <div class="navigation-buttons">
                     <button class="nav-btn" onclick="changePage(1)">❮ Önceki</button>
-                    <button class="nav-btn" onclick="changePage(3)">Sonraki Sayfa ❯</button>
+                    <button class="nav-btn" onclick="changePage(3)">Sonraki ❯</button>
                 </div>
-                <div class="page-indicator">Sayfa 2 / 3</div>
+                <div class="page-indicator">Sayfa 2 / 10</div>
             </div>
         </div>
 
-        <!-- SAYFA 3: Şiir, Sayaç ve Son Cümle -->
+        <!-- SAYFA 3 -->
         <div class="page hidden" id="page3">
             <div>
-                <div class="poetry-box">
+                <h1>İlk Hatıra 🌹</h1>
+                <img src="IMG_1204.png" alt="Foto 3" class="single-photo">
+                <div class="content-box">
                     <h3>Ben Sana Mecburum</h3>
-                    <p>Ben sana mecburum bilemezsin
-                    Adını mıh gibi gökutoşumda tutuyorum...</p>
+                    <p>Ben sana mecburum bilemezsin<br>Adını mıh gibi gökutoşumda tutuyorum...</p>
                 </div>
-                <div class="counter-layout">
+            </div>
+            <div>
+                <div class="navigation-buttons">
+                    <button class="nav-btn" onclick="changePage(2)">❮ Önceki</button>
+                    <button class="nav-btn" onclick="changePage(4)">Sonraki ❯</button>
+                </div>
+                <div class="page-indicator">Sayfa 3 / 10</div>
+            </div>
+        </div>
+
+        <!-- SAYFA 4 -->
+        <div class="page hidden" id="page4">
+            <div>
+                <h1>Müzik ve Biz 🎵</h1>
+                <img src="41B76DB1-134A-4958-9E85-849942D5C01C.png" alt="Foto 4" class="single-photo">
+                <div class="music-box">
+                    <p>🎵 Buray - Deli Kız Çalıyor...</p>
+                    <button onclick="document.getElementById('loveSong').play()" style="background:#e91e63; color:#fff; border:none; padding:5px 15px; border-radius:8px; cursor:pointer; font-size:0.9rem;">Müziği Başlat / Aç</button>
+                </div>
+            </div>
+            <div>
+                <div class="navigation-buttons">
+                    <button class="nav-btn" onclick="changePage(3)">❮ Önceki</button>
+                    <button class="nav-btn" onclick="changePage(5)">Sonraki ❯</button>
+                </div>
+                <div class="page-indicator">Sayfa 4 / 10</div>
+            </div>
+        </div>
+
+        <!-- SAYFA 5: GÜLÜMSEME VE FIKRA SAYFASI -->
+        <div class="page hidden" id="page5">
+            <div>
+                <h1>Şimdi Bu Sayfada Güleceksin! 😄</h1>
+                <img src="76B7FD26-05C5-41A3-8A67-8E49CC319186.jpeg" alt="Foto 5" class="single-photo">
+                <div class="content-box" style="font-size: 0.95rem;">
+                    <p>Temel ile Dursun kahvede otururken Temel sormuş:<br>
+                    - Ula Dursun, aşk ile evlilik arasındaki fark nedir?<br>
+                    Dursun gülerek cevap vermiş:<br>
+                    - Valla aşk gözünü kör eder, evlilik ise gözlük taktırır! Gülümse haydi, gülüşüne kurban olduğum! 🤍</p>
+                </div>
+            </div>
+            <div>
+                <div class="navigation-buttons">
+                    <button class="nav-btn" onclick="changePage(4)">❮ Önceki</button>
+                    <button class="nav-btn" onclick="changePage(6)">Sonraki ❯</button>
+                </div>
+                <div class="page-indicator">Sayfa 5 / 10</div>
+            </div>
+        </div>
+
+        <!-- SAYFA 6 -->
+        <div class="page hidden" id="page6">
+            <div>
+                <h1>Özel Anlar 🤍</h1>
+                <img src="IMG_1204.png" alt="Foto 6" class="single-photo">
+                <div class="content-box">
+                    <p>"Ellerimiz sonsuza kadar birbirine mühürlü kalacak..."</p>
+                </div>
+            </div>
+            <div>
+                <div class="navigation-buttons">
+                    <button class="nav-btn" onclick="changePage(5)">❮ Önceki</button>
+                    <button class="nav-btn" onclick="changePage(7)">Sonraki ❯</button>
+                </div>
+                <div class="page-indicator">Sayfa 6 / 10</div>
+            </div>
+        </div>
+
+        <!-- SAYFA 7 -->
+        <div class="page hidden" id="page7">
+            <div>
+                <h1>Ruh Eşim 🌹</h1>
+                <img src="41B76DB1-134A-4958-9E85-849942D5C01C.png" alt="Foto 7" class="single-photo">
+                <div class="content-box">
+                    <p>"Büyüdükçe büyüyor kalabalığın, ben sana mecburum..."</p>
+                </div>
+            </div>
+            <div>
+                <div class="navigation-buttons">
+                    <button class="nav-btn" onclick="changePage(6)">❮ Önceki</button>
+                    <button class="nav-btn" onclick="changePage(8)">Sonraki ❯</button>
+                </div>
+                <div class="page-indicator">Sayfa 7 / 10</div>
+            </div>
+        </div>
+
+        <!-- SAYFA 8 -->
+        <div class="page hidden" id="page8">
+            <div>
+                <h1>Tanışma Zamanımız 🤍</h1>
+                <div class="counter-layout" style="margin-top:10px;">
                     <div class="counter-content">
                         <h3>Tanışma: 22 Ağustos 2026 🤍</h3>
                         <div class="counter">
@@ -289,16 +336,51 @@
                             <div class="time-box"><span id="seconds">0</span><label>Saniye</label></div>
                         </div>
                     </div>
-                    <img src="IMG_1204.png" alt="Tanışma" class="counter-photo">
                 </div>
-                <p class="final-note">Senin günlüğünde her gün olmak isterim 🤍🌹</p>
+                <img src="IMG_1204.png" alt="Foto 8" class="single-photo" style="max-width:140px; height:160px;">
             </div>
             <div>
                 <div class="navigation-buttons">
-                    <button class="nav-btn" onclick="changePage(2)">❮ Önceki</button>
+                    <button class="nav-btn" onclick="changePage(7)">❮ Önceki</button>
+                    <button class="nav-btn" onclick="changePage(9)">Sonraki ❯</button>
+                </div>
+                <div class="page-indicator">Sayfa 8 / 10</div>
+            </div>
+        </div>
+
+        <!-- SAYFA 9 -->
+        <div class="page hidden" id="page9">
+            <div>
+                <h1>Sonsuzluk Yolunda 🌹</h1>
+                <img src="76B7FD26-05C5-41A3-8A67-8E49CC319186.jpeg" alt="Foto 9" class="single-photo">
+                <div class="content-box">
+                    <p>"Gülüşün ömrüme ömür katıyor, iyi ki benimlesin Kübrâ-yı Gülüm."</p>
+                </div>
+            </div>
+            <div>
+                <div class="navigation-buttons">
+                    <button class="nav-btn" onclick="changePage(8)">❮ Önceki</button>
+                    <button class="nav-btn" onclick="changePage(10)">Sonraki ❯</button>
+                </div>
+                <div class="page-indicator">Sayfa 9 / 10</div>
+            </div>
+        </div>
+
+        <!-- SAYFA 10 -->
+        <div class="page hidden" id="page10">
+            <div>
+                <h1>En Güzel Günce 🤍</h1>
+                <img src="41B76DB1-134A-4958-9E85-849942D5C01C.png" alt="Foto 10" class="single-photo">
+                <div class="content-box" style="background:#fff;">
+                    <p style="font-family: 'Great Vibes', cursive; font-size: 2rem; color: #e91e63;">Senin günlüğünde her gün olmak isterim 🤍🌹</p>
+                </div>
+            </div>
+            <div>
+                <div class="navigation-buttons">
+                    <button class="nav-btn" onclick="changePage(9)">❮ Önceki</button>
                     <span></span>
                 </div>
-                <div class="page-indicator">Sayfa 3 / 3</div>
+                <div class="page-indicator">Sayfa 10 / 10</div>
             </div>
         </div>
 
@@ -314,7 +396,9 @@
             if (inputVal === correctPassword) {
                 document.getElementById('lockScreen').classList.add('hidden');
                 document.getElementById('mainContent').classList.remove('hidden');
-                document.getElementById('loveSong').play().catch(e => console.log(e));
+                
+                const song = document.getElementById('loveSong');
+                song.play().catch(e => console.log("Oto oynatma engellendi, buton kullanılabilir"));
             } else {
                 errorMsg.innerText = "Şifre yanlış Kübrâ-yı Gülüm, tekrar dene! ❤️";
             }

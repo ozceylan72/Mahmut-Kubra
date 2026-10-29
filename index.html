@@ -220,7 +220,7 @@
             </div>
         </div>
 
-        <!-- SAYFA 2: KIZ KULESİ FOTOĞRAFI VE BEN SANA MECBURUM ŞİİRİ -->
+        <!-- SAYFA 2: KIZ KULESİ FOTOĞRAFI VE ŞİİR -->
         <div class="page hidden" id="page2">
             <div>
                 <h1>Kız Kulesi Hatıramız 🌹</h1>
@@ -244,17 +244,17 @@
             </div>
         </div>
 
-        <!-- SAYFA 3: BİRAZ GÜLELİM (FIKRA) -->
+        <!-- SAYFA 3: ATKILI FOTOĞRAF VE LİNET SÖZLERİ -->
         <div class="page hidden" id="page3">
             <div>
-                <h1>Biraz Gülelim 😄</h1>
+                <h1>Yiğidim 🥺🤍</h1>
                 <p class="subtitle">Sevda diye yazılmış biz diye görünmüş 🤍 🌹</p>
-                <div class="content-box" style="font-size: 0.95rem; margin-top: 15px;">
-                    <p>Temel ile Dursun kahvede otururken Temel sormuş:<br><br>
-                    - Ula Dursun, aşk ile evlilik arasındaki fark nedir?<br><br>
-                    Dursun gülerek cevap vermiş:<br>
-                    - Valla aşk gözünü kör eder, evlilik ise gözlük taktırır!<br><br>
-                    Gülüşüne kurban olduğum, yüzünden gülücükler hiç eksik olmasın kraliçem! 🤍</p>
+                <img src="76B7FD26-05C5-41A3-8A67-8E49CC319186.jpeg" alt="Atkılı Fotoğrafımız" class="single-photo">
+                <div class="content-box">
+                    <p>Kim alır seni benden kim koparır?<br>
+                    Göze alan varsa da ölümü çiğner de alır!<br><br>
+                    Göz koyanlar bize düşsün dermansız derde,<br>
+                    Üstüne titrediğim, göz nurum, yiğidim...</p>
                 </div>
             </div>
             <div>
@@ -266,17 +266,14 @@
             </div>
         </div>
 
-        <!-- SAYFA 4: ATKILI FOTOĞRAF VE LİNET SÖZLERİ -->
+        <!-- SAYFA 4: GÖNÜL DAĞI FOTOĞRAFI VE ANISI -->
         <div class="page hidden" id="page4">
             <div>
-                <h1>Yiğidim 🥺🤍</h1>
+                <h1>Gönül Dağı Hatırası 🏔️</h1>
                 <p class="subtitle">Sevda diye yazılmış biz diye görünmüş 🤍 🌹</p>
-                <img src="76B7FD26-05C5-41A3-8A67-8E49CC319186.jpeg" alt="Atkılı Fotoğrafımız" class="single-photo">
-                <div class="content-box">
-                    <p>Kim alır seni benden kim koparır?<br>
-                    Göze alan varsa da ölümü çiğner de alır!<br><br>
-                    Göz koyanlar bize düşsün dermansız derde,<br>
-                    Üstüne titrediğim, göz nurum, yiğidim...</p>
+                <img src="IMG_1213.jpeg" alt="Gönül Dağı Fotoğrafı" class="single-photo">
+                <div class="content-box" style="font-size: 0.95rem; margin-top: 10px;">
+                    <p>"Ben çok severdim Gönül Dağı'nı ama sen hep 'ıııyhh' derdin kraliçem! 😊🤍"</p>
                 </div>
             </div>
             <div>
@@ -426,6 +423,7 @@
         function changePage(pageNum) {
             document.querySelectorAll('.page').forEach(p => p.classList.add('hidden'));
             document.getElementById('page' + pageNum).classList.remove('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
         const startDate = new Date(2026, 7, 22); 
@@ -446,14 +444,6 @@
         }
         setInterval(updateCounter, 1000);
         updateCounter();
-
-        (function() {
-            const originalChangePage = window.changePage;
-            window.changePage = function(pageNum) {
-                if (typeof originalChangePage === 'function') originalChangePage(pageNum);
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            };
-        })();
 
         function createHeart(e) {
             if(document.getElementById('mainContent').classList.contains('hidden')) return;
